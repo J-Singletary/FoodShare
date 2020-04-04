@@ -14,13 +14,13 @@ Codepath Group Project - README Template
 The FoodShare app is an app to help nearby on-campus students share excess food with each other. They can post excess food that they have and request food from others on-campus. If someone has something they would like to share, they can private message the student and collaborate on when and where to meet up. This app is meant to help students get to know their neighbors and to reduce food waste on-campus.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:**
-[x] **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+
+- **Category:** Food and Lifestyle
+- **Mobile:** iOS app
+- **Story:** Connects users with neighbors in order to share excess food. The user can message other students to request/offer their excess food.
+- **Market:** on-campus college students
+- **Habit:** This app can be used whenever they are cooking food, probably using the app every week or more.
+- **Scope:** all campus students, apartment residents, condominiums
 
 ## Product Spec
 
