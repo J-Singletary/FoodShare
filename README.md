@@ -17,9 +17,9 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 
 - **Category:** Food and Lifestyle
 - **Mobile:** iOS app
-- **Story:** Connects users with neighbors in order to share excess food. The user can message other students to request/offer their excess food.
+- **Story:** Connects users with neighbors in order to share excess food. The user can message other students to request/offer their excess food
 - **Market:** on-campus college students
-- **Habit:** This app can be used whenever they are cooking food, probably using the app every week or more.
+- **Habit:** This app can be used whenever they are cooking food, probably using the app every week or more
 - **Scope:** all campus students, apartment residents, condominiums
 
 ## Product Spec
@@ -28,13 +28,19 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* Users can create an account
+* Users can post that they have excess food
+* Users can directly message each other to request/offer food
+* Users can scroll through lists of existing offers
+* Users can close their offering when it is accepted
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* Nice to be able to friend other users so they can appear first
+* Nice to have categories for popular items
+* Nice to restrict access to .edu emails only
+* Nice to filter offers based on proximity
+* Nice to have a profile page
 
 ### 2. Screen Archetypes
 
