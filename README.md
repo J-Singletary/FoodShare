@@ -18,9 +18,9 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 - **Category:** Food and Lifestyle
 - **Mobile:** iOS app
 - **Story:** Connects users with neighbors in order to share excess food. The user can message other students to request/offer their excess food
-- **Market:** on-campus college students
+- **Market:** On-campus college students
 - **Habit:** This app can be used whenever they are cooking food, probably using the app every week or more
-- **Scope:** all campus students, apartment residents, condominiums
+- **Scope:** All campus students, apartment residents, condominiums
 
 ## Product Spec
 
@@ -32,41 +32,44 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 * Users can post that they have excess food
 * Users can directly message each other to request/offer food
 * Users can scroll through lists of existing offers
-* Users can close their offering when it is accepted
+* Users can close their post when it is accepted
+* Users can log out through a profile page
 
 **Optional Nice-to-have Stories**
 
 * Nice to be able to friend other users so they can appear first
 * Nice to have categories for popular items
 * Nice to restrict access to .edu emails only
-* Nice to filter offers based on proximity
-* Nice to have a profile page
+* Nice to search offers based on proximity or type
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login Screen
+* Register Screen
+   * Users can create an account
+* Scroll Screen
+   * Users can scroll through lists of existing posts
+* Creation Screen
+   * Users can post that they have excess food
+* Messaging Screen
+   * Users can directly message each other to request/offer food
+   * Users can close their post when it is accepted
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Scroll Screen
+* Messaging Screen
+* Creation Screen
+* Settings Screen
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Forced Login -> Account creation if no login is available
+* Post selection -> Messaging screen to accept the offer
+* Messaging selection -> Individual messaging chats
+* Logout -> Login screen
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
