@@ -92,6 +92,7 @@ Post
 | createdAt | DateTime | date when post is created |
 | author | Pointed to User | author of post |
 | authorImage | file | author's profile picture |
+| givingFood | boolean | boolean for if they are giving or requesting food |
 
 ### Networking
 - [Add list of network requests by screen ]
