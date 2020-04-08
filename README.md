@@ -80,9 +80,19 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+Post
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| objectId | String | unique id for the user post |
+| imageFood | file | food image that user posts |
+| description | String | post description that user posts |
+| createdAt | DateTime | date when post is created |
+| author | Pointed to User | author of post |
+| authorImage | file | author's profile picture |
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
