@@ -11,7 +11,7 @@ Codepath Group Project - README Template
 
 ## Overview
 ### Description
-The FoodShare app is an app to help nearby on-campus students share excess food with each other. They can post excess food that they have and request food from others on-campus. If someone has something they would like to share, they can private message the student and collaborate on when and where to meet up. This app is meant to help students get to know their neighbors and to reduce food waste on-campus.
+The FoodShare app is an app to help nearby on-campus students share excess food with each other. They can post excess food that they have and request food from others on-campus. If someone has something they would like to share, they can private message the student and collaborate on when and where to meet up. This app is meant to help students get to know their neighbors and to help those in need on-campus.
 
 ### App Evaluation
 
@@ -28,12 +28,13 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 
 **Required Must-have Stories**
 
+* Users can login/logout
 * Users can create an account
 * Users can post that they have excess food
 * Users can directly message each other to request/offer food
-* Users can scroll through lists of existing offers
+* Users can scroll through lists of existing requests/offers
+* Users can filter the existing requests/offers
 * Users can close their post when it is accepted
-* Users can log out through a profile page
 
 **Optional Nice-to-have Stories**
 
@@ -73,9 +74,10 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://drive.google.com/file/d/1iRwVjt_NRO90CaiqcGM_om2CmCDS68kS/view?usp=sharing" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="https://drive.google.com/file/d/1pRZuEDgu5PAGS39zEaPBJypzWNz7qa02/view?usp=sharing" width=600>
 
 ### [BONUS] Interactive Prototype
 
