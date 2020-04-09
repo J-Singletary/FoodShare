@@ -79,6 +79,7 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 <img src="https://imgur.com/t94De0E.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
+<img src="https://recordit.co/wtq8vnR2Dx.gif" width=600>
 
 ## Schema 
 
