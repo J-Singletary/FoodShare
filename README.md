@@ -73,11 +73,10 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 * Logout -> Login screen
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="https://imgur.com/4sZ0U1G" width=600>
+<img src="https://imgur.com/4sZ0U1G.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="https://imgur.com/t94De0E" width=600>
+<img src="https://imgur.com/t94De0E.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
 
