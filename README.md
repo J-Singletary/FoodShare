@@ -99,12 +99,49 @@ Post
 ### Networking
 **Login**
 
-* Stuff
-* More Stuff
+* Create/POST: Verify login credentials
+* API/GET: Use API to verify UCSD email
 
 **Sign-up**
 
-* Stuff
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+* Create/POST: Verify login credentials
+* API/GET: Use API to verify UCSD email
+* Update/PUT: Choose Avatar from selection of images
+
+**Home(Give/Request Food)**
+
+* Read/GET: Update user’s feed 
+* DELETE: User had option to delete their own post
+* Create/POST: User has the abity to create new post
+
+**Home(Your Posts)**
+
+* Read/GET: Update user’s feed 
+* DELETE: User had option to delete their own post 
+* Create/POST: User has the abity to create new post
+* Update/PUT: Update Sold Status
+
+**Messages Screen**
+
+* Read/GET: Update user’s feed 
+* DELETE: User had option to delete conversations with others
+
+**Individual Messages**
+
+* Read/GET: Update user’s feed 
+* DELETE: User had option to delete conversation or invidual texts from either the recipiant or the sender
+* Create/POST: Create and send new Messages
+
+**Add Post**
+* Create/POST: User can create new post
+* Create/POST: User can type in text bars and specify what foods they have or need and
+* User can choose to give or request food
+* Update/PUT: If giving food, user can upload picture of it
+* Read/GET: Update feed with user’s new post
+
+**Settings**
+
+* Create/POST: User can logout
+* Create/POST: User can update their name, email, password, college
+* API/GET: Use API to verify UCSD email if they are updating their email
+* Update/PUT: Choose and update Avatar from selection of images
