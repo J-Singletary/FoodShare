@@ -97,6 +97,14 @@ Post
 | givingFood | boolean | boolean for if they are giving or requesting food |
 
 ### Networking
+**Login**
+
+* Stuff
+* More Stuff
+
+**Sign-up**
+
+* Stuff
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
