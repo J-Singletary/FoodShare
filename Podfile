@@ -8,6 +8,10 @@ target 'Food Share' do
   # Pods for Food Share
   # This pulls in the latest version of Alamofire >= 4.4 but less than 5.0.
   pod 'Alamofire', '~> 4.4'
+
+  # This adds Firebase database
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
   
   target 'Food ShareTests' do
     inherit! :search_paths
