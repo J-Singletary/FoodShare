@@ -12,6 +12,8 @@ target 'Food Share' do
   # This adds Firebase database
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'FirebaseUI'
+  pod 'Firebase/Auth'
   
   target 'Food ShareTests' do
     inherit! :search_paths
