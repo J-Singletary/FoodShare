@@ -51,8 +51,8 @@ class SignUpViewController: UIViewController {
     
     //Check that a password meets the criteria for being valid
     func isPasswordValid(_ password : String) -> Bool {
-        let passwordvalid = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?@]{8,}")
-        return passwordvalid.evaluate(with: password)
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
     }
     
     
