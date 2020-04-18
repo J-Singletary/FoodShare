@@ -145,3 +145,7 @@ Post
 * Create/POST: User can update their name, email, password, college
 * API/GET: Use API to verify UCSD email if they are updating their email
 * Update/PUT: Choose and update Avatar from selection of images
+
+### Gifs
+**Milestone 1**
+https://imgur.com/n7TAjWW
