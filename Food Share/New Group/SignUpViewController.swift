@@ -107,9 +107,9 @@ class SignUpViewController: UIViewController {
                     
                     let lastName = self.lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
-                    let email = self.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    //let email = self.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
-                    let pass = self.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    //let pass = self.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
                     //There was no error creating the user. Now store the first and last name
                     let db = Firestore.firestore()
