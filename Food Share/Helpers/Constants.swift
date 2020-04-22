@@ -16,5 +16,7 @@ struct Constants {
         
         static let tabBarViewController = "TabVC"
         
+        static let NavigationController = "NavID"
+        
     }
 }
