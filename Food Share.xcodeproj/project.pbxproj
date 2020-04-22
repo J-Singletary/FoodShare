@@ -17,6 +17,7 @@
 		558AA87E2443E616007A5620 /* Food_ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558AA87D2443E616007A5620 /* Food_ShareUITests.swift */; };
 		55D4D7462447D0FE00EC76A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55D4D7452447D0FE00EC76A5 /* GoogleService-Info.plist */; };
 		5DF11B2848DDF013C2239D63 /* Pods_Food_Share_Food_ShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8918D6931EB3569ADD3A82F7 /* Pods_Food_Share_Food_ShareUITests.framework */; };
+		8406A7A6245101AA0056FB98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406A7A5245101AA0056FB98 /* ProfileViewController.swift */; };
 		848B998C244AA84B004F32B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B998B244AA84B004F32B6 /* LoginViewController.swift */; };
 		848B998E244AA86E004F32B6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B998D244AA86E004F32B6 /* SignUpViewController.swift */; };
 		848B9990244AA87F004F32B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B998F244AA87F004F32B6 /* HomeViewController.swift */; };
@@ -63,6 +64,7 @@
 		558AA87F2443E616007A5620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D4D7452447D0FE00EC76A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		66D64478437BD28709F89E6F /* Pods-Food ShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food ShareTests.release.xcconfig"; path = "Target Support Files/Pods-Food ShareTests/Pods-Food ShareTests.release.xcconfig"; sourceTree = "<group>"; };
+		8406A7A5245101AA0056FB98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		848B998B244AA84B004F32B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		848B998D244AA86E004F32B6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		848B998F244AA87F004F32B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				848B998D244AA86E004F32B6 /* SignUpViewController.swift */,
 				848B998F244AA87F004F32B6 /* HomeViewController.swift */,
 				848B998B244AA84B004F32B6 /* LoginViewController.swift */,
+				8406A7A5245101AA0056FB98 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "New Group";
@@ -482,6 +485,7 @@
 				558AA85E2443E615007A5620 /* SceneDelegate.swift in Sources */,
 				848B9994244AC783004F32B6 /* Constants.swift in Sources */,
 				848B998E244AA86E004F32B6 /* SignUpViewController.swift in Sources */,
+				8406A7A6245101AA0056FB98 /* ProfileViewController.swift in Sources */,
 				848B9990244AA87F004F32B6 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
