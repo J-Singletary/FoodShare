@@ -24,5 +24,17 @@ class ProfileViewController: UIViewController {
         } catch let signOutError as NSError{
             print("Error signing out: %@", signOutError)
         }
+        
+        transitionToLogin()
     }
+    
+    func transitionToLogin() {
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboards.loginController)
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        
+    }
+    
 }
