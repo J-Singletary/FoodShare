@@ -254,7 +254,7 @@
         <!--Offer Food-->
         <scene sceneID="mOA-7O-1NQ">
             <objects>
-                <viewController title="Offer Food" id="BBg-GD-U1q" sceneMemberID="viewController">
+                <viewController title="Offer Food" id="BBg-GD-U1q" customClass="OfferFoodViewController" customModule="Food_Share" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Zm-nK-mFS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,6 +291,9 @@
                                             <constraint firstAttribute="height" constant="50" id="2lG-LN-6kc"/>
                                         </constraints>
                                         <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="PostButtonTapped:" destination="BBg-GD-U1q" eventType="touchUpInside" id="ICZ-6G-zLh"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quh-9S-5DI">
                                         <rect key="frame" x="0.0" y="210" width="334" height="50"/>
@@ -313,6 +316,12 @@
                         <viewLayoutGuide key="safeArea" id="FMh-lS-YQz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Offer Food" id="7z5-uG-hgM"/>
+                    <connections>
+                        <outlet property="DescriptionTextField" destination="Apr-4w-vl7" id="ZSj-39-dWL"/>
+                        <outlet property="ErrorLabel" destination="quh-9S-5DI" id="ANO-F8-HwX"/>
+                        <outlet property="OfferFoodTextField" destination="QXC-Rn-eFb" id="5F1-sW-EU4"/>
+                        <outlet property="PostButton" destination="eqf-8J-zca" id="P4Y-hS-LnK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4y5-Je-NXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,7 +330,7 @@
         <!--Request Food-->
         <scene sceneID="QrA-Ms-pbc">
             <objects>
-                <viewController title="Request Food" id="iZm-a0-QX4" sceneMemberID="viewController">
+                <viewController title="Request Food" id="iZm-a0-QX4" customClass="RequestFoodViewController" customModule="Food_Share" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EIM-EE-YU2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
