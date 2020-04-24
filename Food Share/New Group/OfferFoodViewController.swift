@@ -57,6 +57,27 @@ class OfferFoodViewController: UIViewController {
         else {
             
             //Create cleaned data and push it to firebase
+            let food = self.OfferFoodTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            let description = self.DescriptionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            //There was no error in the text fields, push the data to Firebase
+            let db = Firestore.firestore()
+            
+            //get a reference to the user
+            var ref: DatabaseReference!
+            ref = Database.database().reference()
+            
+            let userID = Auth.auth().currentUser?.uid
+            
+            db.collection("posts").addDocument(data: ["user": userID as Any, "foodName": food, "description": description]) { (error) in
+                if error != nil {
+                    self.showError("Post could not be created")
+                }
+            }
+            
+            
+            
         }
     }
     
