@@ -76,7 +76,7 @@ class OfferFoodViewController: UIViewController {
                 }
             }
             
-            
+            self.transitionToHome()
             
         }
     }
@@ -85,4 +85,14 @@ class OfferFoodViewController: UIViewController {
         ErrorLabel.text = message
         ErrorLabel.alpha = 1
     }
+    
+    func transitionToHome() {
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboards.tabBarViewController)
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        
+    }
+    
 }
