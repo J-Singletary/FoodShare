@@ -70,7 +70,7 @@ class OfferFoodViewController: UIViewController {
             
             let userID = Auth.auth().currentUser?.uid
             
-            db.collection("posts").addDocument(data: ["user": userID as Any, "foodName": food, "description": description]) { (error) in
+            db.collection("posts").addDocument(data: ["user": userID as Any, "foodName": food, "description": description, "dateCreated": Timestamp.init()]) { (error) in
                 if error != nil {
                     self.showError("Post could not be created")
                 }
