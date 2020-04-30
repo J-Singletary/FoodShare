@@ -10,19 +10,28 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import Photos
 
-class OfferFoodViewController: UIViewController {
+class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var OfferFoodTextField: UITextField!
     @IBOutlet weak var DescriptionTextField: UITextField!
     @IBOutlet weak var PostButton: UIButton!
     @IBOutlet weak var ErrorLabel: UILabel!
+    @IBOutlet weak var ImageView: UIImageView!
+    
+    //Variable to access photo library
+    var imagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Verify any errors
         setUpElements()
+        
+        // Set up ImageController to ask permission
+        imagePickerController.delegate = self
+        checkPermissions()
     }
     
     func setUpElements() {
@@ -41,6 +50,42 @@ class OfferFoodViewController: UIViewController {
         }
         
         return nil
+    }
+    
+    // Access photo library and add photo to firebase
+    @IBAction func ImageButtonTapped(_ sender: Any) {
+        self.imagePickerController.sourceType = .photoLibrary //This can be switched to .camera to access actual phone camera
+        self.present(self.imagePickerController, animated: true, completion: nil)
+    }
+    
+    // Check if image permission is true
+    func checkPermissions() {
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
+            PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) -> Void in ()
+            })
+        }
+        
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            
+        } else {
+            PHPhotoLibrary.requestAuthorization(requestAuthorizationHandler)
+        }
+    }
+    
+    // Ask permission for photo library
+    func requestAuthorizationHandler(status: PHAuthorizationStatus) {
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            print("We have permission for photos")
+        } else {
+            print("We don't have permission for photos")
+        }
+    }
+    
+    // Display the selected image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        ImageView.image = info[UIImagePickerController.InfoKey.imageURL] as? UIImage
+        
+        imagePickerController.dismiss(animated: true, completion: nil)
     }
     
     // On button click push the data to Firebase
@@ -81,11 +126,13 @@ class OfferFoodViewController: UIViewController {
         }
     }
     
+    // Print error message and display it
     func showError(_ message: String) {
         ErrorLabel.text = message
         ErrorLabel.alpha = 1
     }
     
+    // Return to homescreen after a post
     func transitionToHome() {
         
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboards.tabBarViewController)
