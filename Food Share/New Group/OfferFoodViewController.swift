@@ -83,8 +83,8 @@ class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate
     
     // Display the selected image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        ImageView.image = info[UIImagePickerController.InfoKey.imageURL] as? UIImage
-        
+        ImageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+
         imagePickerController.dismiss(animated: true, completion: nil)
     }
     
