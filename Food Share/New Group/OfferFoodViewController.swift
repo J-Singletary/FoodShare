@@ -22,6 +22,7 @@ class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate
     
     //Variable to access photo library
     var imagePickerController = UIImagePickerController()
+    var photoId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate
         
         //Check that all fields are filled
         if OfferFoodTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            DescriptionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+            DescriptionTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || photoId.isEmpty
         {
             return "Please fill in all fields."
         }
@@ -81,11 +82,36 @@ class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     
-    // Display the selected image
+    // Display the preview and call upload
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         ImageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-
+        if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+            print(url)
+            uploadToCloud(fileURL: url)
+        }
         imagePickerController.dismiss(animated: true, completion: nil)
+    }
+    
+    // Upload to Firebase Storage
+    func uploadToCloud(fileURL : URL) {
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let localFile = fileURL
+        
+        // Set the name to a random digit string
+        photoId = UUID.init().uuidString
+        photoId = "\(photoId).jpg"
+        let photoRef = storageRef.child(photoId)
+        
+        // Put the metadata and the photo to Storage
+        let uploadTask = photoRef.putFile(from: localFile, metadata: nil) { (metadata, err) in
+            guard let metadata = metadata else {
+                print(err?.localizedDescription)
+                return
+            }
+            print("Photo Uploaded!")
+        }
+        
     }
     
     // On button click push the data to Firebase
@@ -115,7 +141,7 @@ class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate
             
             let userID = Auth.auth().currentUser?.uid
             
-            db.collection("posts").addDocument(data: ["user": userID as Any, "foodName": food, "description": description, "dateCreated": Timestamp.init()]) { (error) in
+            db.collection("posts").addDocument(data: ["user": userID as Any, "foodName": food, "description": description, "photoId": photoId, "dateCreated": Timestamp.init()]) { (error) in
                 if error != nil {
                     self.showError("Post could not be created")
                 }
@@ -125,6 +151,17 @@ class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate
             
         }
     }
+    
+    /*
+     CODE FOR RETREIVING IMAGE BY PHOTOID INTO IMAGEVIEW FOR JARED:
+     
+     let photoRef = Storage.storage().reference().child(photoId)
+     photoRef.getData(maxSize: 1*1024*1024*100) { (imageData, error) in
+         let img = UIImage(data: imageData!)
+         self.ImageView.image = img
+     }
+     
+     */
     
     // Print error message and display it
     func showError(_ message: String) {
