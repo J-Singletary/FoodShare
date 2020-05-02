@@ -17,6 +17,9 @@
 		55D4D7462447D0FE00EC76A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55D4D7452447D0FE00EC76A5 /* GoogleService-Info.plist */; };
 		55FA69FA2452B4F600098C11 /* OfferFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA69F92452B4F600098C11 /* OfferFoodViewController.swift */; };
 		5DF11B2848DDF013C2239D63 /* Pods_Food_Share_Food_ShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8918D6931EB3569ADD3A82F7 /* Pods_Food_Share_Food_ShareUITests.framework */; };
+		68789A56245DD49300937080 /* messageDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68789A55245DD49300937080 /* messageDetailCell.swift */; };
+		68789A58245DD5C900937080 /* MessageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68789A57245DD5C900937080 /* MessageDetail.swift */; };
+		68789A5A245DE5D200937080 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68789A59245DE5D200937080 /* MessageVC.swift */; };
 		8406A7A6245101AA0056FB98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406A7A5245101AA0056FB98 /* ProfileViewController.swift */; };
 		848B998C244AA84B004F32B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B998B244AA84B004F32B6 /* LoginViewController.swift */; };
 		848B998E244AA86E004F32B6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B998D244AA86E004F32B6 /* SignUpViewController.swift */; };
@@ -67,6 +70,9 @@
 		55D4D7452447D0FE00EC76A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55FA69F92452B4F600098C11 /* OfferFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferFoodViewController.swift; sourceTree = "<group>"; };
 		66D64478437BD28709F89E6F /* Pods-Food ShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food ShareTests.release.xcconfig"; path = "Target Support Files/Pods-Food ShareTests/Pods-Food ShareTests.release.xcconfig"; sourceTree = "<group>"; };
+		68789A55245DD49300937080 /* messageDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageDetailCell.swift; sourceTree = "<group>"; };
+		68789A57245DD5C900937080 /* MessageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetail.swift; sourceTree = "<group>"; };
+		68789A59245DE5D200937080 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		8406A7A5245101AA0056FB98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		848B998B244AA84B004F32B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		848B998D244AA86E004F32B6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 		84242E1024535255000F19AA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				68789A55245DD49300937080 /* messageDetailCell.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 				848B998B244AA84B004F32B6 /* LoginViewController.swift */,
 				8406A7A5245101AA0056FB98 /* ProfileViewController.swift */,
 				84D6411A245D06B600B24742 /* MessagingViewController.swift */,
+				68789A59245DE5D200937080 /* MessageVC.swift */,
 			);
 			name = "View Controllers";
 			path = "New Group";
@@ -224,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				84D64118245CEA9B00B24742 /* Post.swift */,
+				68789A57245DD5C900937080 /* MessageDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -506,6 +515,9 @@
 			files = (
 				55FA69FA2452B4F600098C11 /* OfferFoodViewController.swift in Sources */,
 				848B998C244AA84B004F32B6 /* LoginViewController.swift in Sources */,
+				68789A58245DD5C900937080 /* MessageDetail.swift in Sources */,
+				68789A56245DD49300937080 /* messageDetailCell.swift in Sources */,
+				68789A5A245DE5D200937080 /* MessageVC.swift in Sources */,
 				558AA85C2443E615007A5620 /* AppDelegate.swift in Sources */,
 				558AA85E2443E615007A5620 /* SceneDelegate.swift in Sources */,
 				84D6411B245D06B600B24742 /* MessagingViewController.swift in Sources */,
