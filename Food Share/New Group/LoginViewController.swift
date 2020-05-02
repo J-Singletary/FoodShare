@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setUpElements()
+        
     }
     
     func setUpElements() {
@@ -74,6 +75,18 @@ class LoginViewController: UIViewController {
                 
             }
             else {
+                let name = Auth.auth().currentUser?.displayName
+                if name == nil {
+                    let handle = Auth.auth().addStateDidChangeListener({ (Auth, user) in
+                        let changeRequest = user?.createProfileChangeRequest()
+                        changeRequest?.displayName = "FirstName"
+                        changeRequest?.commitChanges(completion: { (err) in
+                            print("Changed name")
+                        })
+                    })
+                    
+                }
+                
                 self.transitionToHome()
             }
         }

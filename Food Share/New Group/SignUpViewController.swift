@@ -100,13 +100,28 @@ class SignUpViewController: UIViewController {
                     
                     //let pass = self.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
+                    
+                    
                     //There was no error creating the user. Now store the first and last name
                     let db = Firestore.firestore()
+                    
+                    let handle = Auth.auth().addStateDidChangeListener({ (Auth, user) in
+                        let changeRequest = user?.createProfileChangeRequest()
+                        changeRequest?.displayName = firstName
+                        changeRequest?.commitChanges(completion: { (err) in
+                            print("Unable to change user displayName")
+                        })
+                    })
+                    
+                    
+                    
+                    
                     db.collection("users").addDocument(data: ["first_Name": firstName, "last_Name": lastName, "uid": result!.user.uid]) { (error) in
                         if error != nil {
                             self.showError("User data could not be saved")
                         }
                     }
+ 
                     
                     //transition to home screen
                     self.transitionToHome()
