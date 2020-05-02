@@ -13,16 +13,11 @@ import FirebaseAuth
 class MessagingViewController: UIViewController {
 
     @IBOutlet weak var textLabel: UILabel!
-    private var postCollectionRef: CollectionReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        postCollectionRef = Firestore.firestore().collection("Post(Offer)")
-        
-        
-        
     }
     
     
