@@ -15,6 +15,7 @@ target 'Food Share' do
   pod 'Firebase/Storage'#,'~>4.0'
   pod 'FirebaseUI'
   pod 'Firebase/Auth'
+  pod 'SwiftKeychainWrapper'
   
   #pod 'FirebaseInstanceID', '2.0.0'
   

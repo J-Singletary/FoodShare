@@ -13,17 +13,18 @@ import FirebaseDatabase
 import SwiftKeychainWrapper
 
 class messageDetailCell: UITableViewCell {
+    @IBOutlet weak var recipientImg: UIImageView!
     
     @IBOutlet weak var recipientName: UILabel!
     
     @IBOutlet weak var charPreview: UILabel!
     
-    var messageDetail: messageDetail!
+    var messageDetail: MessageDetail!
     
-    var userPostKey: FIRDatabaseReference!
+    var userPostKey: DatabaseReference!
     
     let currentUser = KeychainWrapper.standard.string(forKey: "uid")
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,16 +35,40 @@ class messageDetailCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configureCell(messageDetail: messageDetail) {
+
+    func configureCell(messageDetail: MessageDetail) {
+        
         self.messageDetail = messageDetail
         
-        let recipientData = FIRDatabase.database().reference().child("users").child(messageDetail.recipient)
+        let recipientData = Database.database().reference().child("users").child(messageDetail.recipient)
         
         recipientData.observeSingleEvent(of: .value, with: { (snapshot) in
-            let data = snapshot.value as! Dictionary<String, AnyObject>.Element
+            
+            let data = snapshot.value as! Dictionary<String, AnyObject>
             
             let username = data["username"]
             
+            let userImg = data["userImg"]
+            
             self.recipientName.text = username as? String
+            
+            let ref = Storage.storage().reference(forURL: userImg! as! String)
+            
+            ref.getData(maxSize: 100000, completion: { (data, error) in
+                
+                if error != nil {
+                    print("could not load image")
+                } else {
+                    
+                    if let imgData = data {
+                        
+                        if let img = UIImage(data: imgData) {
+                            
+                            self.recipientImg.image = img
+                        }
+                    }
+                }
+            })
+        })
     }
 }

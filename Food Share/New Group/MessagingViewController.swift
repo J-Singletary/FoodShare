@@ -10,35 +10,46 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import SwiftKeychainWrapper
 
 class MessagingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     private var postCollectionRef: CollectionReference!
-    
+        
     var messageDetail = [MessageDetail]()
     
     var detail: MessageDetail!
     
-    var currentUser = KeychainWrapper.standard.string(forKey: "uid")
+    // currentUser was nil when using KeychainWarpper
+//    var currentUser = KeychainWrapper.standard.string(forKey: "uid")
+    var currentUser = Auth.auth().currentUser?.uid
+
     
     var recipient: String!
     
     var messageID: String!
     
+    
+    
+    @IBAction func onNewMsg(_ sender: Any) {
+        performSegue(withIdentifier: "toSearchVC", sender: UIButton.self)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableview.delegate = self
+        tableView.delegate = self
         
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         postCollectionRef = Firestore.firestore().collection("Post(Offer)")
         
-        FIRDatabase.database().reference().child("users").child(currentUser!).child("messages").observe(.value, with: { (snapshot) in
+        Database.database().reference().child("users").child(currentUser!).child("messages").observe(.value, with: { (snapshot) in
             
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 self.messageDetail.removeAll()
                 
                 for data in snapshot {
@@ -61,11 +72,11 @@ class MessagingViewController: UIViewController, UITableViewDelegate, UITableVie
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageDetail.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let messageDet = messageDetail[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as? messageDetailCell {
@@ -78,20 +89,26 @@ class MessagingViewController: UIViewController, UITableViewDelegate, UITableVie
         return messageDetailCell()
     }
         
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         recipient = messageDetail[indexPath.row].recipient
         
-        messageId = messageDetail[indexPath.row].messageRef.key
+        messageID = messageDetail[indexPath.row].messageRef.key
         
-        performSegue(withIdentifier: "toMessages", sender: Any?)
+            performSegue(withIdentifier: "toMessages", sender: Any?.self)
         }
         
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = segue.destination as? MessageVC {
-            destinationViewController.recipient = recipient
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
-            destinationViewController.messageID = messageId
-        }
+            if segue.identifier == "toSearchVC" {
+                let searchVC = segue.destination as! SearchVC
+                print("GOING TO SEAERCH")
+                searchVC.messageId = self.messageID
+            }
+//        if let destinationViewController = segue.destination as? MessageVC {
+//            destinationViewController.recipient = recipient
+//
+//            destinationViewController.messageId = self.messageID
+//        }
     }
 }
 }

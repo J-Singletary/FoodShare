@@ -351,6 +351,7 @@ PODS:
   - SDWebImage (5.7.2):
     - SDWebImage/Core (= 5.7.2)
   - SDWebImage/Core (5.7.2)
+  - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -359,6 +360,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - FirebaseUI
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
@@ -393,6 +395,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -426,7 +429,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 2498503da7e61b731b07e716061b64f7fbb3eeb4
+PODFILE CHECKSUM: d9ba21f12aaea9df6d39ee481c665912e49081c7
 
 COCOAPODS: 1.9.1
