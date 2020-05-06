@@ -156,7 +156,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.tableView.reloadData()
                     self.myRefreshControl.endRefreshing()
                 }
-                
             }
         }
     }
@@ -165,6 +164,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.requests.removeAll()
         self.offers.removeAll()
         
+        //get my requests
         requestCollectionRef.getDocuments { (snapshot, error) in
             if let err = error {
                 debugPrint("Error fetching documents: \(err)")
@@ -182,6 +182,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let uid = data["uid"] as? String ?? "Failed"
                     
                     if (uid == Auth.auth().currentUser?.uid) {
+                        //add their post to requests array
                         let newPost = Request(name: first, description: descriptionText, food: type)
                         self.requests.append(newPost)
                         print("added my request post")
@@ -193,6 +194,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
+        //get my offers
         postCollectionRef.getDocuments { (snapshot, error) in
             if let err = error {
                 debugPrint("Error fetching documents: \(err)")
@@ -217,7 +219,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         photoRef.getData(maxSize: 1*1024*1024*100) { (imageData, error) in
                             
                             let img = UIImage(data: imageData!)!
-                            //create a new post and add it to array
+                            //create a new post and add it to offers array
                             let newPost = Offer(name: first, photo: img, description: descriptionText, food: type)
                             self.offers.append(newPost)
                             print("added my offer post")
@@ -253,7 +255,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else {
                 return UITableViewCell()
             }
-                
         }
         
         else if segmentedControl.selectedSegmentIndex == 1 {
@@ -265,14 +266,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else {
                 return UITableViewCell()
             }
-            
         }
             
         
         else {
             return UITableViewCell()
         }
-        
     }
     
     
