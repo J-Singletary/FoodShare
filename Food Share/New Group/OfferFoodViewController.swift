@@ -140,8 +140,9 @@ class OfferFoodViewController: UIViewController, UIImagePickerControllerDelegate
             ref = Database.database().reference()
             
             let user = Auth.auth().currentUser?.displayName
+            let uid = Auth.auth().currentUser?.uid
             
-            db.collection("Post(Offer)").addDocument(data: ["username": user as Any, "foodName": food, "description": description, "photoId": photoId, "dateCreated": Timestamp.init()]) { (error) in
+            db.collection("Post(Offer)").addDocument(data: ["uid": uid as Any, "username": user as Any, "foodName": food, "description": description, "photoId": photoId, "dateCreated": Timestamp.init()]) { (error) in
                 if error != nil {
                     self.showError("Post could not be created")
                     print("Error creating post")

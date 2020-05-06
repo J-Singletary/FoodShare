@@ -70,8 +70,9 @@ class RequestFoodViewController: UIViewController {
             ref = Database.database().reference()
             
             let user = Auth.auth().currentUser?.displayName
+            let uid = Auth.auth().currentUser?.uid
             
-            db.collection("Post(Request)").addDocument(data: ["username": user as Any, "foodName": food, "description": description, "dateCreated": Timestamp.init()]) { (error) in
+            db.collection("Post(Request)").addDocument(data: ["uid": uid as Any, "username": user as Any, "foodName": food, "description": description, "dateCreated": Timestamp.init()]) { (error) in
                 if error != nil {
                     self.showError("Post could not be created")
                     print("Error creating post")

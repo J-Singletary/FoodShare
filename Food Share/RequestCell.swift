@@ -1,21 +1,20 @@
 //
-//  OfferCell.swift
-//  Food Share
+//  RequestCell.swift
+//  
 //
-//  Created by user170197 on 5/1/20.
-//  Copyright © 2020 Christian Lay-Geng. All rights reserved.
+//  Created by user170197 on 5/6/20.
 //
 
 import UIKit
 
-class OfferCell: UITableViewCell {
+class RequestCell: UITableViewCell {
 
     
-    @IBOutlet weak var foodImage: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var messageButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,16 +27,14 @@ class OfferCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(post: Offer) {
-        foodImage.image = post.photo
+    func configureCell(post: Request) {
         
         descriptionLabel.text = post.description
         
         typeLabel.text = post.food
         
         nameLabel.text = post.name
+        
     }
-    
-    
 
 }
