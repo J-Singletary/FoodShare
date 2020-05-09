@@ -268,7 +268,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
             
-        
+        else if segmentedControl.selectedSegmentIndex == 2 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyOfferCell", for: indexPath) as? MyOfferCell {
+                cell.configureCell(post: offers[indexPath.row])
+                cell.layer.borderWidth = 1
+                cell.layer.borderColor = UIColor.purple.cgColor
+                return cell
+            } else {
+                return UITableViewCell()
+            }
+        }
+            
         else {
             return UITableViewCell()
         }

@@ -37,6 +37,7 @@
 		84D6411B245D06B600B24742 /* MessagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6411A245D06B600B24742 /* MessagingViewController.swift */; };
 		84EC5ADD2463283F00993F6B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5ADC2463283F00993F6B /* Request.swift */; };
 		84EC5AE22463356100993F6B /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC5AE12463356100993F6B /* RequestCell.swift */; };
+		84F1B2B824668CC0007A41AD /* MyOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B2B724668CC0007A41AD /* MyOfferCell.swift */; };
 		939CE4B16024B0C7ECFD1E2F /* Pods_Food_ShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE3AFE1E75D7D19117E8B0 /* Pods_Food_ShareTests.framework */; };
 		DF6F15175B251B89AFAAEB0B /* Pods_Food_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E1A1C3E340CE577BBDCA83 /* Pods_Food_Share.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		84D6411A245D06B600B24742 /* MessagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingViewController.swift; sourceTree = "<group>"; };
 		84EC5ADC2463283F00993F6B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		84EC5AE12463356100993F6B /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestCell.swift; path = "/Users/user170197/Desktop/FoodShare/Food Share/RequestCell.swift"; sourceTree = "<absolute>"; };
+		84F1B2B724668CC0007A41AD /* MyOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOfferCell.swift; sourceTree = "<group>"; };
 		8918D6931EB3569ADD3A82F7 /* Pods_Food_Share_Food_ShareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Share_Food_ShareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E8C9FA3003E56FD01405BD /* Pods-Food ShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food ShareTests.debug.xcconfig"; path = "Target Support Files/Pods-Food ShareTests/Pods-Food ShareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE7B3B501057BA0562AF1C42 /* Pods-Food Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Share.release.xcconfig"; path = "Target Support Files/Pods-Food Share/Pods-Food Share.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				848B9991244AA886004F32B6 /* View Controllers */,
 				558AA8612443E615007A5620 /* Main.storyboard */,
 				84D64115245CDE8700B24742 /* OfferCell.swift */,
+				84F1B2B724668CC0007A41AD /* MyOfferCell.swift */,
 				84EC5AE12463356100993F6B /* RequestCell.swift */,
 				558AA8642443E616007A5620 /* Assets.xcassets */,
 				558AA8662443E616007A5620 /* LaunchScreen.storyboard */,
@@ -560,6 +563,7 @@
 				848B9990244AA87F004F32B6 /* HomeViewController.swift in Sources */,
 				686DCD61245F2D290029809A /* Message.swift in Sources */,
 				84D64116245CDE8700B24742 /* OfferCell.swift in Sources */,
+				84F1B2B824668CC0007A41AD /* MyOfferCell.swift in Sources */,
 				686DCD63245F724D0029809A /* SearchVC.swift in Sources */,
 				84D64119245CEA9B00B24742 /* Offer.swift in Sources */,
 				686DCD65245F7ACB0029809A /* searchCell.swift in Sources */,
