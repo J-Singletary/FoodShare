@@ -17,6 +17,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var lastNameTextField: UITextField!
     
+    @IBOutlet weak var collegeTextField: UITextField!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -53,7 +55,8 @@ class SignUpViewController: UIViewController {
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            collegeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
         {
             return "Please fill in all fields."
         }
@@ -87,7 +90,7 @@ class SignUpViewController: UIViewController {
                 if err != nil {
                     
                     //There was an error
-                    self.showError("Error creating user")
+                    self.showError("Please fill in all fields")
                 }
                 else {
                     
@@ -95,6 +98,8 @@ class SignUpViewController: UIViewController {
                     let firstName = self.firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
                     let lastName = self.lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    
+                    let college = self.collegeTextField.text!
                     
                     //let email = self.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                     
@@ -107,7 +112,7 @@ class SignUpViewController: UIViewController {
                     
                     let handle = Auth.auth().addStateDidChangeListener({ (Auth, user) in
                         let changeRequest = user?.createProfileChangeRequest()
-                        changeRequest?.displayName = firstName
+                        changeRequest?.displayName = "\(firstName) (\(college))"
                         changeRequest?.commitChanges(completion: { (err) in
                             print("Unable to change user displayName")
                         })
@@ -116,7 +121,7 @@ class SignUpViewController: UIViewController {
                     
                     
                     
-                    db.collection("users").addDocument(data: ["first_Name": firstName, "last_Name": lastName, "uid": result!.user.uid]) { (error) in
+                    db.collection("users").addDocument(data: ["first_Name": firstName, "last_Name": lastName, "uid": result!.user.uid, "college": college]) { (error) in
                         if error != nil {
                             self.showError("User data could not be saved")
                         }

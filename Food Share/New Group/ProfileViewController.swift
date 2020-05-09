@@ -12,9 +12,42 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var collegeLabel: UILabel!
+    
+    private var userCollectionRef: CollectionReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userCollectionRef = Firestore.firestore().collection("users")
+        setupElements()
 
+    }
+    
+    func setupElements() {
+        let uid = Auth.auth().currentUser?.uid
+        userCollectionRef.whereField("uid", isEqualTo: uid).getDocuments { (snapshot, err) in
+            if err != nil {
+                print("Error fetching user document")
+            } else {
+                for document in snapshot!.documents {
+                    let data = document.data()
+                    
+                    let first = data["first_Name"] as? String ?? "Anonymous"
+                    let last = data["last_Name"] as? String ?? "Anonymous"
+                    let college = data["college"] as? String ?? "No College Found"
+                    
+                    let currentName = self.nameLabel.text
+                    let fullName = "\(currentName ?? "Name: ") \(first) \(last)"
+                    self.nameLabel.text = fullName
+                    
+                    let fullCollege = "College: \(college)"
+                    self.collegeLabel.text = fullCollege
+                    
+                }
+            }
+        }
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
