@@ -28,11 +28,11 @@ The FoodShare app is an app to help nearby on-campus students share excess food 
 
 **Required Must-have Stories**
 
-* [X] Users can login/logout 
-* [X] Users can create an account
-* [X]Users can post that they have excess food
+* Users can login/logout 
+* Users can create an account
+* Users can post that they have excess food
 * Users can directly message each other to request/offer food
-* [X]Users can scroll through lists of existing requests/offers
+* Users can scroll through lists of existing requests/offers
 * Users can filter the existing requests/offers
 * Users can close their post when it is accepted
 
