@@ -158,3 +158,5 @@ https://imgur.com/a/w4PKAtq
 
 **Final Video**
 https://youtu.be/fYNXGjqAo6I
+
+**Due to updates in Firestore security rules, we have decided to delete the Firestore project, making the app unsuable.**
